@@ -8,7 +8,7 @@ import core.potholes.api.IPothole;
 import core.potholes.api.IUnmeasuredPothole;
 import core.routes.api.IRouteCalculator;
 
-public class MeinRoutenCalculator implements IRouteCalculator
+public class BilloRouteCalculator implements IRouteCalculator
 {
 	@Override
 	public IPothole[] calculateAndGetRoute(IPothole[] potholes)

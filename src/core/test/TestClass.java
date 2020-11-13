@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import core.coordinates.api.ICoordninate;
 import core.coordinates.impl.Coordinate;
 import core.dimensions.impl.Dimensions;
 import core.images.impl.Image;
@@ -13,7 +14,7 @@ import core.potholes.impl.PhotographedMeasuredPothole;
 import core.potholes.impl.PhotographedUnmeasuredPothole;
 import core.potholes.impl.UnphotographedMeasuredPothole;
 import core.potholes.impl.UnphotographedUnmeasuredPothole;
-import core.routes.impl.MeinRoutenCalculator;
+import core.routes.impl.BilloRouteCalculator;
 import core.routes.impl.Route;
 
 public class TestClass
@@ -38,8 +39,9 @@ public class TestClass
 //			return potholes;
 //		}
 //	});
-	
-	static Route route = new Route(new IPothole[] { hole1, hole2, hole3, hole4, hole5, hole6 }, new MeinRoutenCalculator());
+
+	static Route route = new Route(new IPothole[] { hole1, hole2, hole3, hole4, hole5, hole6 },
+			new BilloRouteCalculator());
 
 	public static void main(String[] args)
 	{
@@ -87,5 +89,9 @@ public class TestClass
 		{
 			e.printStackTrace();
 		}
+		
+		ICoordninate c = new Coordinate(40.7486, -73.9864);
+		System.out.println(c.getDistanceTo(c));
+		
 	}
 }
