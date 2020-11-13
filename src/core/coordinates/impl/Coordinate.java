@@ -4,25 +4,35 @@ import core.coordinates.api.ICoordninate;
 
 public final class Coordinate implements ICoordninate
 {
-	public final double longitude;
 	public final double latitude;
+	public final double longitude;
 
-	public Coordinate(double longitude, double latitude)
+	public Coordinate(double latitude, double longitude)
 	{
-		this.longitude = longitude;
+		if(Math.abs(latitude) > 90)
+		{
+			
+		}
+		
+		if(Math.abs(longitude) > 90)
+		{
+			
+		}
+
 		this.latitude = latitude;
-	}
-
-	@Override
-	public final double getLongitude()
-	{
-		return longitude;
+		this.longitude = longitude;
 	}
 
 	@Override
 	public final double getLatitude()
 	{
 		return latitude;
+	}
+	
+	@Override
+	public final double getLongitude()
+	{
+		return longitude;
 	}
 
 	@Override
