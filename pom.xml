@@ -20,9 +20,11 @@
          <artifactId>appengine-maven-plugin</artifactId>
          <version>2.2.0</version>
          <configuration>
-             <project>potholeroutecalculator</project> 
+           <stage.enableJarSplitting>true</stage.enableJarSplitting>
+           <deploy.stopPreviousVersion>true</deploy.stopPreviousVersion>
+           <project>potholeroutecalculator</project> 
            <version>1</version>
-          </configuration>
+         </configuration>
       </plugin>
     </plugins>
   </build>
