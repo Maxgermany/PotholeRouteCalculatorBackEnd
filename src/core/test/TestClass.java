@@ -32,6 +32,7 @@ public class TestClass
 	static IPothole hole8 = new PhotographedMeasuredPothole(new Coordinate(51.5047379, 9.9807803),
 			new Image("/mein/Pfad/zum/bild.png"), new Dimensions(99.2, 60, 40));
 
+	
 //	static Route route = new Route(new IPothole[] { hole1, hole2, hole3, hole4, hole5, hole6 }, new IRouteCalculator()
 //	{
 //		@Override
