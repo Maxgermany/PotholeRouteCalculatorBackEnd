@@ -18,7 +18,14 @@
       <plugin>
          <groupId>com.google.appengine</groupId>
          <artifactId>appengine-maven-plugin</artifactId>
-         <version>1.9.82</version>
+         <version>${appengine.target.version}</version>
+         <configuration>
+             <project>YOUR PROJECT ID</project> <!-- WHAT DO WE NEED THIS FOR-->
+              <jvmFlags>
+                  <jvmFlag>-Ddatastore.backing_store=${project.basedir}/local_db.bin</jvmFlag>
+              </jvmFlags>
+              <fullScanSeconds>-1</fullScanSeconds>
+          </configuration>
       </plugin>
     </plugins>
   </build>
