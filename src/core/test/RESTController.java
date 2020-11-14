@@ -1,9 +1,12 @@
 package core.test;
 
 import java.util.ArrayList;
+import java.util.UUID;
 import java.util.concurrent.atomic.AtomicLong;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -47,7 +50,7 @@ public class RESTController
 		return new Greeting(counter.incrementAndGet(), String.format(template, name));
 	}
 
-	@PostMapping("/greetinga")
+	@PostMapping("/greeting")
 	public Greeting newGreeting(@RequestBody Greeting newGreeting)
 	{
 		greetings.add(newGreeting);
@@ -58,5 +61,11 @@ public class RESTController
 	public Route route(@RequestParam(value = "id", defaultValue = "0") int id)
 	{
 		return new Route(new IPothole[] { hole3, hole4, hole5, hole6, hole7, hole8 }, new GreedyRouteCalculator(1, 10));
+	}
+
+	@DeleteMapping("/pothole/{uuid}")
+	public void deleteEmployee(@PathVariable UUID uuid)
+	{
+		System.out.println(uuid);
 	}
 }
