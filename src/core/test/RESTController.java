@@ -20,13 +20,13 @@ public class RESTController
 	}
 
 	@GetMapping("/route")
-	public Route route(@RequestParam(value = "uuid", defaultValue = "0") String uuid)
+	public Route route(@RequestParam(value = "uuid", defaultValue = "70d4583a-1427-4b93-86e0-31e4f11e4de0") String uuid)
 	{
 		return RouteManager.getRoute(UUID.fromString(uuid));
 	}
 	
 	@GetMapping("/routes")
-	public Route[] routes(@RequestParam(value = "uuid", defaultValue = "0") String uuid)
+	public Route[] routes(@RequestParam(value = "uuid", defaultValue = "70d4583a-1427-4b93-86e0-31e4f11e4de0") String uuid)
 	{
 		return RouteManager.getRoutes();
 	}

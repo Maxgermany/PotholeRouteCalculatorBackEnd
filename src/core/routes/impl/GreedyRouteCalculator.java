@@ -1,6 +1,7 @@
 package core.routes.impl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import core.potholes.api.IPothole;
 import core.potholes.impl.PotholeTools;
@@ -20,18 +21,20 @@ public class GreedyRouteCalculator implements IRouteCalculator
 	@Override
 	public IPothole[] calculateAndGetRoute(IPothole[] potholes)
 	{
+		IPothole[] potholesCopy = Arrays.copyOf(potholes, potholes.length);
 		ArrayList<IPothole> route = new ArrayList<IPothole>();
 
-		int indexOfMaxVolumePothole = PotholeTools.getIndexOfMaxVolumePothole(potholes);
-		route.add(potholes[indexOfMaxVolumePothole]);
-		potholes[indexOfMaxVolumePothole] = null;
+		int indexOfMaxVolumePothole = PotholeTools.getIndexOfMaxVolumePothole(potholesCopy);
+		route.add(potholesCopy[indexOfMaxVolumePothole]);
+		potholesCopy[indexOfMaxVolumePothole] = null;
 
 		double estimatedPassedTime = 0.0;
-		while (estimatedPassedTime < maxWorkingTime - estimatedTimePerPothole && route.size()<potholes.length)
+		while (estimatedPassedTime < maxWorkingTime - estimatedTimePerPothole && route.size() < potholesCopy.length)
 		{
-			int indexOfClosestPothole = PotholeTools.getIndexOfClosestPotholeTo(route.get(route.size() - 1), potholes);
-			route.add(potholes[indexOfClosestPothole]);
-			potholes[indexOfClosestPothole] = null;
+			int indexOfClosestPothole = PotholeTools.getIndexOfClosestPotholeTo(route.get(route.size() - 1),
+					potholesCopy);
+			route.add(potholesCopy[indexOfClosestPothole]);
+			potholesCopy[indexOfClosestPothole] = null;
 			estimatedPassedTime += estimatedTimePerPothole;
 		}
 		IPothole[] routeArray = new IPothole[route.size()];

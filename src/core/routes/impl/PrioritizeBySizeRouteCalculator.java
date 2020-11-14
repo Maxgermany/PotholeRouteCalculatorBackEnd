@@ -37,7 +37,7 @@ public class PrioritizeBySizeRouteCalculator implements IRouteCalculator
 
 				IMeasuredPothole measuredPothole1 = (IMeasuredPothole) o1;
 				IMeasuredPothole measuredPothole2 = (IMeasuredPothole) o2;
-
+				
 				return (int) (measuredPothole1.getDimensions().getVolume() - measuredPothole2.getDimensions().getVolume());
 			}
 		});
