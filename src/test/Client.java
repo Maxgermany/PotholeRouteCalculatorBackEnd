@@ -1,4 +1,4 @@
-package core.test;
+package test;
 
 import core.manager.impl.RouteManager;
 import core.routes.impl.BilloRouteCalculator;

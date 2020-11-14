@@ -1,4 +1,4 @@
-package core.test;
+package rest;
 
 import java.util.UUID;
 

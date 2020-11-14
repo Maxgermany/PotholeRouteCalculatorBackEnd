@@ -1,4 +1,4 @@
-package core.test;
+package test;
 import core.coordinates.impl.Coordinate;
 import core.dimensions.impl.Dimensions;
 import core.images.impl.Image;
