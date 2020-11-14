@@ -43,6 +43,7 @@ public class TestClass
 //	});
 
 	static Route route = new Route(new IPothole[] { hole3, hole4, hole5, hole6, hole7, hole8 }, new GreedyRouteCalculator(1, 8));
+	static Route route2 = new Route(new IPothole[] { hole3, hole4, hole5, hole6, hole7, hole8 }, new PrioritizeSizeRoute(1, 8));
 
 	public static void main(String[] args)
 	{
@@ -66,6 +67,14 @@ public class TestClass
 		try
 		{
 			objectMapper.writeValue(new File("target/route.json"), route);
+		} catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+
+		try
+		{
+			objectMapper.writeValue(new File("target/route.json"), route2);
 		} catch (IOException e)
 		{
 			e.printStackTrace();
