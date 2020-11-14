@@ -16,13 +16,13 @@ public class RESTController
 {
 	public RESTController()
 	{
-		
+
 	}
 
 	@GetMapping("/route")
-	public Route route(@RequestParam(value = "uuid", defaultValue = "0") UUID uuid)
+	public Route route(@RequestParam(value = "uuid", defaultValue = "0") String uuid)
 	{
-		return RouteManager.getRoute(uuid);
+		return RouteManager.getRoute(UUID.fromString(uuid));
 	}
 
 	@DeleteMapping("/pothole/{uuid}")
