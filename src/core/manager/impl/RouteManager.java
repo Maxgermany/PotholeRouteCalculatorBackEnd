@@ -11,16 +11,21 @@ public class RouteManager
 
 	public RouteManager()
 	{
-		
+
 	}
 
 	public static void addRoute(Route route)
 	{
 		uuidToRouteMap.put(route.getUUID(), route);
 	}
-	
+
 	public static Route getRoute(UUID uuid)
 	{
 		return uuidToRouteMap.get(uuid);
+	}
+
+	public static Route[] getRoutes()
+	{
+		return uuidToRouteMap.values().toArray(new Route[uuidToRouteMap.values().size()]);
 	}
 }

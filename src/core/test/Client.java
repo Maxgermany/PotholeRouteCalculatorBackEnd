@@ -17,5 +17,9 @@ public class Client
 		RouteManager.addRoute(route1);
 		RouteManager.addRoute(route2);
 		RouteManager.addRoute(route3);
+
+		System.out.println(route1.getUUID());
+		System.out.println(route2.getUUID());
+		System.out.println(route3.getUUID());
 	}
 }
