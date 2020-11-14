@@ -18,9 +18,4 @@ public class Client
 		RouteManager.addRoute(route2);
 		RouteManager.addRoute(route3);
 	}
-
-	public static void main(String[] args)
-	{
-		new Client();
-	}
 }

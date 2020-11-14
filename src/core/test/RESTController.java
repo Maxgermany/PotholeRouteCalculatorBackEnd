@@ -26,8 +26,8 @@ public class RESTController
 	}
 
 	@DeleteMapping("/pothole/{uuid}")
-	public void deleteEmployee(@PathVariable UUID uuid)
+	public void deleteEmployee(@PathVariable String uuid)
 	{
-		System.out.println(uuid);
+		System.out.println(UUID.fromString(uuid));
 	}
 }
