@@ -24,9 +24,9 @@ public class RESTController
 	{
 		return RouteManager.getRoute(UUID.fromString(uuid));
 	}
-	
+
 	@GetMapping("/routes")
-	public Route[] routes(@RequestParam(value = "uuid", defaultValue = "70d4583a-1427-4b93-86e0-31e4f11e4de0") String uuid)
+	public Route[] routes()
 	{
 		return RouteManager.getRoutes();
 	}
@@ -34,6 +34,6 @@ public class RESTController
 	@DeleteMapping("/pothole/{uuid}")
 	public void deleteEmployee(@PathVariable String uuid)
 	{
-		System.out.println(UUID.fromString(uuid));
+		System.out.println("Pothole: " + UUID.fromString(uuid) + " wurde gefixt.");
 	}
 }
