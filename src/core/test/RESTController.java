@@ -14,17 +14,15 @@ import core.routes.impl.Route;
 @RestController
 public class RESTController
 {
-	private final RouteManager routeManater;
-	
-	public RESTController(RouteManager routeManager)
+	public RESTController()
 	{
-		this.routeManater = routeManager;
+		
 	}
-	
+
 	@GetMapping("/route")
-	public Route route(@RequestParam(value = "id", defaultValue = "0") UUID uuid)
+	public Route route(@RequestParam(value = "uuid", defaultValue = "0") UUID uuid)
 	{
-		return routeManater.getRoute(uuid);
+		return RouteManager.getRoute(uuid);
 	}
 
 	@DeleteMapping("/pothole/{uuid}")

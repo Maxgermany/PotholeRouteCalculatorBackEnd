@@ -7,19 +7,19 @@ import core.routes.impl.Route;
 
 public class RouteManager
 {
-	private HashMap<UUID, Route> uuidToRouteMap;
+	private static HashMap<UUID, Route> uuidToRouteMap = new HashMap<UUID, Route>();;
 
 	public RouteManager()
 	{
-		this.uuidToRouteMap = new HashMap<UUID, Route>();
+		
 	}
 
-	public void addRoute(Route route)
+	public static void addRoute(Route route)
 	{
 		uuidToRouteMap.put(route.getUUID(), route);
 	}
 	
-	public Route getRoute(UUID uuid)
+	public static Route getRoute(UUID uuid)
 	{
 		return uuidToRouteMap.get(uuid);
 	}
