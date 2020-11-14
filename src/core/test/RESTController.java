@@ -31,8 +31,8 @@ public class RESTController
 		return RouteManager.getRoutes();
 	}
 
-	@DeleteMapping("/pothole/{uuid}")
-	public void deleteEmployee(@PathVariable String uuid)
+	@DeleteMapping("/deletePothole/{uuid}")
+	public void deletePothole(@PathVariable String uuid)
 	{
 		System.out.println("Pothole: " + UUID.fromString(uuid) + " wurde gefixt.");
 	}
