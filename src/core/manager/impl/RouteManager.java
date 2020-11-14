@@ -7,12 +7,10 @@ import core.routes.impl.Route;
 
 public class RouteManager
 {
-	private int id;
-	private HashMap<Integer, Route> idToRouteMap;
+	private HashMap<UUID, Route> idToRouteMap;
 
 	public RouteManager()
 	{
-		this.id = 0;
 		this.idToRouteMap = new HashMap<Integer, Route>();
 	}
 

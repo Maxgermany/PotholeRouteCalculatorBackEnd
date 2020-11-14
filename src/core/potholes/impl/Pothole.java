@@ -17,7 +17,7 @@ abstract class Pothole implements IPothole
 	}
 
 	@Override
-	public UUID getUUID()
+	public final UUID getUUID()
 	{
 		return uuid;
 	}

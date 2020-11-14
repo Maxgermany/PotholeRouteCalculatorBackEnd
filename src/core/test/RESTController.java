@@ -62,6 +62,13 @@ public class RESTController
 	{
 		return new Route(new IPothole[] { hole3, hole4, hole5, hole6, hole7, hole8 }, new GreedyRouteCalculator(1, 10));
 	}
+	
+	@GetMapping("/route")
+    public Route route(@RequestParam(value = "id", defaultValue = "0") String id)
+    {
+        if(id.equals("1")) return new Route(new IPothole[] { hole3, hole4, hole5, hole6, hole7, hole8 }, new GreedyRouteCalculator(1, 10));
+        return null;
+    }
 
 	@DeleteMapping("/pothole/{uuid}")
 	public void deleteEmployee(@PathVariable UUID uuid)
